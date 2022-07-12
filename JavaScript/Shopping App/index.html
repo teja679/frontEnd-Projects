@@ -1,96 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping App</title>
-  <link rel="stylesheet" href="index.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <link rel="icon"
-    href="https://play-lh.googleusercontent.com/MiukRBVde88V8uZO2vO4htqIg5RjnU03JT7DYc4wIqe_5CoORTOrykyudYnDgUHMHrc"
-    sizes="32x32">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shopping App</title>
+	<link rel="icon"
+	href="https://play-lh.googleusercontent.com/MiukRBVde88V8uZO2vO4htqIg5RjnU03JT7DYc4wIqe_5CoORTOrykyudYnDgUHMHrc"
+	sizes="32x32">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body onload="fetchProducts()">
+	<!-- --------------------------- NAVBAR ---------------------- -->
+	<nav class="navbar navbar-expand-lg navbar-light bg">
+		<a class="navbar-brand" href="#">
+			<img src="./assets/image.ico" alt="image">
+			MaDmaX's Shopping App
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-  <!-- ----------------------------Navbar-------------------- -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">
-      <img src="https://freepngimg.com/thumb/web_design/42851-3-cart-free-clipart-hd.png" width="30" height="30"
-        class="d-inline-block align-top" alt="">
-      Max's Shopping App
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#products">Products</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#about-us">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#contact-us">Contact Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#cartModal">Cart</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item" id="sign-up-nav">
+					<a class="nav-link" data-toggle="modal" data-target="#signUpModal" id="sign-up-nav-link">Sign Up</a>
+				</li>
+				<li class="nav-item" id="login-nav">
+					<a class="nav-link" data-toggle="modal" data-target="#loginModal" id="login-nav-link">Login</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#products">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about-us">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact-us">Contact Us</a>
-        </li>
-        <li class="nav-item cart-nav-link">
-          <a class="nav-link" data-toggle="modal" data-target="#cartModal">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            <span class="badge badge-pill badge-light" id="cart-items-length">0</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item" id="sign-up-nav">
-          <a class="nav-link" data-toggle="modal" data-target="#signUpModal" id="sign-up-nav-link">Sign Up</a>
-        </li>
-        <li class="nav-item" id="login-nav">
-          <a class="nav-link" data-toggle="modal" data-target="#loginModal" id="login-nav-link">Login</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+	<!-- ------------------------ Jumbotron -------------------- -->
 
-  <!-- --------------------------Jumbotron------------------ -->
-  <div class="jumbotron main-header-section">
-    <h1 class="display-1">
-      Welcome to <br>
-      <span class="brand-name">Max's</span> <br>
-      Shopping App
-    </h1>
-    <p class="lead">The one stop destination for all your shopping needs! Be it from fashion to electronics, you get it
-      all here!</p>
-    <hr>
-    <a class="btn btn-primary btn-lg" href="#products" role="button">Explore</a>
-    <br>
-    <img src='image.gif' class="jumbotron-img">
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-circle-up"></i></button>
-  </div>
-  <!-- --------------------------Products------------------------- -->
+	<div class="jumbotron main-header-section">
+		<h1 class="display-1">
+			Welcome to <br>
+			<span class="brand-name">MaDmaX's</span> <br>
+			Shopping App
+		</h1>
+		<p class="lead">The one stop destination for all your shopping needs! Be it from fashion to electronics, you get
+			it all here!</p>
+		<hr>
+		<a class="btn btn-primary btn-lg" href="#products" role="button">Explore</a>
+		<br>
+		<img src="./assets/shoppingImage1.gif" alt="image">
+		<button class="btn btn-dark btn-lg">Button</button>
+	</div>
 
-  <div class="container">
-    <div class="row" id="products">
-      <div id="products-spinner" class="spinner-border text-light" role="status"></div>
-    </div>
-    <div id="about-us">
-      <h1 class="display-3">
-        About us
-      </h1>
-      <p>
+	<!-- -----------------------Products------------------------- -->
+	<div class="container">
+		<div class="row" id="products">
+			<div id="product-spinner" class="spinner-border text-light" role="status"></div>
+		</div>
+		<div id="about-us">
+			<h1 class="display-3">
+				About Us
+			</h1>
+			<p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam officiis voluptates architecto dignissimos
         eum expedita accusantium. Vel doloribus minus quod et pariatur tempora ullam consequuntur dolorem tempore illum?
         Atque labore quod quidem velit assumenda quaerat quasi tenetur. Rerum, doloribus ex. Illo, ab! Officiis saepe
@@ -122,36 +111,35 @@
         rerum magnam eveniet! Aliquam delectus minus culpa ab commodi facere. Iste vel repellat doloribus, ullam
         veritatis mollitia magnam, vero rem reiciendis laborum dolore.
       </p>
-    </div>
-    <div id="contact-us">
-      <h1 class="display-3">
-        Contact us
-      </h1>
-      <p class="lead">Email: max@shopping.com</h1>
-      <p class="lead">Contact No.: +91 1122112211</h1>
-    </div>
-  </div>
-  <!-----------------------------------Add to cart Modal ----------------------------------->
-  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="cart-items-body">
-          <img src="cart-empty.gif" id="cart-empty-img" srcset="">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Continue to Buy</button>
-        </div>
+		</div>
+		<div id="contact-us">
+			<h1 class="display-3">
+				Contact Us
+			</h1>
+			<p class="lead">Email: madmax@gmail.com</p>
+			<p class="lead">Contact No: +91 9703765755</p>
+		</div>
+	</div>
+<!-- ----------------------------------Add to Cart--------------------- -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+				<img src="./assets/cart-empty.gif" alt="cart-empty" srcset="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Continue to Buy</button>
       </div>
     </div>
   </div>
+</div>
   <!----------------------------------- Sign Up Modal ----------------------------------->
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -208,21 +196,6 @@
                 Please enter a valid password.
               </div>
             </div>
-
-            <!-- <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="tNCCheckBox" required>
-                    <label class="form-check-label" for="tNCCheckBox">
-                      Agree to terms and conditions
-                    </label>
-                    <div class="invalid-feedback" id="tnCInvalid">
-                      You must agree before submitting.
-                    </div>
-                  </div>
-                </div> -->
-            <!-- <div class="col-12"> 
-                  <button class="btn btn-dark" type="button" onclick="validate()">Submit form</button>
-                </div> -->
           </div>
         </form>
         <div class="modal-footer">
@@ -249,7 +222,7 @@
               <label for="email" class="form-label">Email</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend"
+                <input type="text" class="form-control" id="loginEmail" aria-describedby="inputGroupPrepend"
                   onkeyup="loginValidate()" required>
                 <div class="valid-feedback" id="emailValid">
                   Looks good!
@@ -261,7 +234,7 @@
             </div>
             <div class="col-md-12  mb-3 form-fields">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" onkeyup="loginValidate()" required>
+              <input type="password" class="form-control" id="loginPassword" onkeyup="loginValidate()" required>
               <div class="valid-feedback" id="passwordValid">Looks good!</div>
               <div class="invalid-feedback" id="passwordInvalid">
                 Please enter a valid password.
@@ -276,31 +249,14 @@
       </div>
     </div>
   </div>
-  <script src="js/addToCart.js"></script>
-  <script src="js/validate.js"></script>
-  <script src="js/createItemsInCart.js"></script>
-  <script src="js/createProduct.js"></script>
-  <script src="js/misc.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/signUp.js"></script>
-  <script src="js/logIn.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+		<script src="js/createProducts.js"></script>
+		<script src="js/addToCart.js"></script>
+		<script src="js/signUp.js"></script>
+		<script src="js/index.js"></script>
+		<script src="js/validate.js"></script>
 </body>
 
 </html>
-
-<!-- 1. Navbar
-2. Header
-3. Products  
-    a. UI  
-    b. link API
-4. About Us
-5. Contact Us
-6. Link a + btn with div(scroll)
-7. Cart Modal
-8. Cart Items card
-9. Sign Up Modal
-10. Login Modal
-11. Validaion
-      a. Sign  Up
-      b. Login
-12. Authentication + Alert -->

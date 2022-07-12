@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Project</title>
+</head>
+<body>
+    <div class="score"></div>
+    <div class="game">
+        <div class="startScreen">
+            Welcome message
+        </div>
+        <div class="gameArea hide"></div>
+    </div>
+    <script>
+        const score = document.getElementsByClassName('score')
+        const startScreen = document.querySelector('.startScreen')
+        const gameArea = document.getElementsByClassName('gameArea')
+
+        startScreen.addEventListener("click", start)
+        document.addEventListener("keydown", pressOn)
+        document.addEventListener("keyup", pressOff)
+
+        let keys = {
+            ArrowUp: false,
+            ArrowDown: false,
+            ArrowLeft: false,
+            ArrowRight: false,
+        }
+        function pressOn(e){
+            e.preventDefault()
+            keys[e.key] = true;
+            console.log(keys)
+        }
+        function pressOff(e){
+            e.preventDefault()
+            keys[e.key] = true;
+            console.log(keys)
+        }
+        function start() {
+            console.log('click')
+        }
+    </script>
+</body>
+</html>
