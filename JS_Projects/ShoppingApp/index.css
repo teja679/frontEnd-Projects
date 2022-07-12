@@ -11,7 +11,7 @@ body {
     text-align: center;
     background-color:#abdbe3;
 }
-.jumbotron--img{
+.jumbotron-img{
     height: 300px;  
 	background-color: #abdbe3;
 }
@@ -119,13 +119,6 @@ body {
   #cart-empty-img{
 	width: 450px;
   }
-  /* #signUp{
-  }
-  .formRow{
-	margin: auto;
-	width: 600px;
-  }
-   */
    .formRow{
 	margin: 10px;
    }
